@@ -48,16 +48,16 @@ func (p *ParkingLot) Leave(ID string, hours int) string {
 				charge += (hours - 2) * 10
 			}
 			s.RemoveCar()
-			return fmt.Sprintf("ID number %s with Slot Number %d is free with Charge $%d", ID, s.SlotNumber, charge)
+			return fmt.Sprintf("Registration number %s with Slot Number %d is free with Charge $%d", ID, s.SlotNumber, charge)
 		}
 	}
-	return fmt.Sprintf("ID number %s not found", ID)
+	return fmt.Sprintf("Registration number %s not found", ID)
 }
 
 // Status prints the current status of the parking lot
 func (p *ParkingLot) Status() string {
 	var status string
-	status += "Slot No. ID No.\n"
+	status += "Slot No. Registration No.\n"
 	for _, s := range p.Slots {
 		if s.Car != nil {
 			status += fmt.Sprintf("%d %s\n", s.SlotNumber, s.Car.ID)

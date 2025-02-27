@@ -48,7 +48,6 @@ func main() {
 				continue
 			}
 			parkingLot = parkinglot.CreateParkingLot(capacity)
-			fmt.Printf("Created parking lot with %d slots\n", capacity)
 
 		case "park":
 			if parkingLot == nil {
@@ -76,7 +75,7 @@ func main() {
 				fmt.Println("Invalid hours")
 				continue
 			}
-			fmt.Println(parkingLot.Leave(registration, hours))
+			fmt.Print(parkingLot.Leave(registration, hours))
 
 		case "status":
 			if parkingLot == nil {
